@@ -3,13 +3,16 @@ import "./Header.css";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="header">
-      <div className="header-logo">
-        <StorefrontIcon className="header-logoImage" fontSize="large" />
-        <h2 className="header-logoTitle">eShop</h2>
-      </div>
+      <Link to="/">
+        <div className="header-logo">
+          <StorefrontIcon className="header-logoImage" fontSize="large" />
+          <h2 className="header-logoTitle">eShop</h2>
+        </div>
+      </Link>
       <div className="header-search">
         <input type="text" className="header_searchInput" />
         <SearchIcon className="header-searchIcon" />
@@ -23,10 +26,12 @@ const Header = () => {
           <span className="nav-itemLineOne">Your</span>
           <span className="nav-itemLineTwo">Shop</span>
         </div>
-        <div className="nav-item">
-          <ShoppingBasketIcon className="nav-itemBasket" />
-          <span className="nav-itemLineTwo nav-basketCount">0</span>
-        </div>
+        <Link to="/checkout">
+          <div className="nav-itemBasket">
+            <ShoppingBasketIcon />
+            <span className="nav-itemLineTwo nav-basketCount">0</span>
+          </div>
+        </Link>
       </div>
     </div>
   );
