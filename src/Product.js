@@ -8,9 +8,11 @@ const Product = ({ id, title, price, rating, imgSource, productName }) => {
       type: "ADD_TO_BASKET",
       item: {
         id: id,
-        image: imgSource,
+        title: title,
+        imgSource: imgSource,
         price: price,
         rating: rating,
+        productName: productName,
       },
     });
   };

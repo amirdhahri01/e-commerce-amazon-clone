@@ -1,24 +1,34 @@
 import React from "react";
 import "./CheckoutProduct.css";
-const CheckoutProduct = () => {
+const CheckoutProduct = ({
+  id,
+  title,
+  price,
+  rating,
+  imgSource,
+  productName,
+}) => {
   return (
     <>
-      <div className="checkout-product">
+      <div className="checkout-product" id={id}>
         <img
-          src="https://m.media-amazon.com/images/I/716-ufSNJ5L._AC_SX425_.jpg"
-          alt="Backpack"
+          src={imgSource}
+          alt={productName}
           className="checkout-product-image"
         />
         <div className="product-info">
-          <p className="checkout-product-title">
-            abshoo Classical Basic Travel Backpack For School Water Resistant
-            Bookbag
-          </p>
+          <p className="checkout-product-title">{title}</p>
           <p className="price">
             <small>$</small>
-            <strong>30</strong>
+            <strong>{price}</strong>
           </p>
-          <div className="checkout-product-rating">⭐⭐⭐⭐</div>
+          <div className="checkout-product-rating">
+            {Array(rating)
+              .fill()
+              .map((item) => {
+                return <>⭐</>;
+              })}
+          </div>
           <button>Remove from basket</button>
         </div>
       </div>

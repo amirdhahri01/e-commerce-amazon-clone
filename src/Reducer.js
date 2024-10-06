@@ -6,6 +6,12 @@ export const initialState = {
 
 //Selector
 
+export const getBasketTotal = (basket) => {
+  return basket?.reduce((amount, item) => {
+    return amount + item.price;
+  }, 0);
+};
+
 const reducer = (state, action) => {
   // eslint-disable-next-line default-case
   switch (action.type) {
